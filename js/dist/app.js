@@ -15,17 +15,18 @@ var clues = [];
  * @param an array
  * @returns a new array
  */
-function getClues(data) {
-    clues.push(data);
-}
+// function getClues(data) { 
+//   clues.push(data);
+// }
 $(function () {
     // let message: string | null = "Hello world";
     // console.log(message);
     $.ajax({
         url: "https://jservice.io/api/categories?count=" + numOfCategories
     }).then(function (data) {
-        // console.log(data);
-        getClues(data);
+        console.log(data);
+        //   getClues(data);
+        // });
+        // console.log(clues);
     });
-    // console.log(clues);
 });

@@ -2,8 +2,8 @@
     "ComplilerOptions": {
         // "rootDir": ".",
         // "outDir": "./js",
-        "target": "es5",
-        "module": "commonjs",
+        "target": "es6",
+        // "module": "commonjs",
         // "moduleResolution": "node",
         // "noImplicitAny": true,
         // "noImplicitReturns": true,

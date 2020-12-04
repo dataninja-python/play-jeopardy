@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import $ = require("jquery");
 
 /**
  * This app allows a user to play jeopardy
@@ -17,9 +17,9 @@ let clues = [];
  * @param an array
  * @returns a new array
  */
-function getClues(data) { 
-  clues.push(data);
-}
+// function getClues(data) { 
+//   clues.push(data);
+// }
 
 $(() => {
   // let message: string | null = "Hello world";
@@ -27,11 +27,11 @@ $(() => {
 
   $.ajax({
     url: `https://jservice.io/api/categories?count=${numOfCategories}`,
-  }).then((data): void => {
-    // console.log(data);
-    getClues(data);
-  });
+  }).then((data) => {
+    console.log(data);
+    //   getClues(data);
+    // });
 
-  // console.log(clues);
-  
+    // console.log(clues);
+  })
 })
