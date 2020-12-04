@@ -1,0 +1,19 @@
+{
+	"knownSymbols": {
+		"$": [
+			{
+				"name": "$",
+				"module": "js/jquery",
+				"isDefault": true,
+				"asDefinition": "* as $"
+			}
+		],
+		"default": [
+			{
+				"name": "default",
+				"path": "/home/codeus/code/play-jeopardy/JQuery.d.ts",
+				"isDefault": false
+			}
+		]
+	}
+}

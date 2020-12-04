@@ -1,6 +1,6 @@
-// "use strict";
-// exports.__esModule = true;
-// var $ = require("jquery");
+"use strict";
+exports.__esModule = true;
+var $ = require("jquery");
 /**
  * This app allows a user to play jeopardy
  */
@@ -10,7 +10,6 @@ var clueIDs = [];
 var clueTitles = [];
 var numberOfClues = [];
 var clues = [];
-let finalClues = [];
 /**
  * returns a random list of jeopardy clue categories from an array of objects
  * @param an array
@@ -28,8 +27,5 @@ $(function () {
         // console.log(data);
         getClues(data);
     });
-    console.log(clues);
-    finalClues = clues[][0];
-    console.log(finalClues);
-
+    // console.log(clues);
 });

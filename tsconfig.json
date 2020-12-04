@@ -1,0 +1,15 @@
+{
+    "ComplilerOptions": {
+        // "rootDir": ".",
+        // "outDir": "./js",
+        "target": "es5",
+        "module": "commonjs",
+        // "moduleResolution": "node",
+        // "noImplicitAny": true,
+        // "noImplicitReturns": true,
+        // "noImplicitThis": true,
+        // "allowSyntheticDefaultImports": true,
+        "removeComments": false,
+        "sourceMap": true
+    }
+}
