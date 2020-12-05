@@ -3,6 +3,10 @@ exports.__esModule = true;
 var $ = require("jquery");
 /**
  * This app allows a user to play jeopardy
+ * This was more challenging than I originally thought. Then, again I have little experience
+ * estimating the difficulty of projects like this. As always data related issues took up 80%
+ * of my time.
+ * sources: https://www.w3schools.com/js/js_json_intro.asp;
  */
 /**
  * MASTER PSEUDOCODE:
@@ -26,10 +30,26 @@ var numOfCategories = 18;
 //   title: [],
 //   clues: []
 // }
-var categoryResult = [];
-function storeCategoryData(category) {
-    categoryResult.push(category);
-}
+var categoriesObj = {};
+var categoriesArr = [];
+var theJSON;
+var theText;
+var theObj = {
+    ids: [],
+    titles: [],
+    numOfQuestions: []
+};
+var theName = "jeopardyCategories";
+var category;
+var ids;
+var titles;
+var counts;
+/**
+ * converts from JSON and stores category data as an array of js object
+ * @param category
+ */
+// function storeCategories(category) {
+// }
 $(function () {
     // simple test to make sure load function works
     // let message: string = "hi";
@@ -46,7 +66,16 @@ $(function () {
      * @param categories
      */
     function (categories) {
-        categories.forEach(storeCategoryData);
+        // console.log(categories);
+        // after several hours failing to access my data it hit me that the api is sending JSON
+        // that must be converted...thanks for the heads up everyone
+        var count = 0;
+        for (var _i = 0, categories_1 = categories; _i < categories_1.length; _i++) {
+            category = categories_1[_i];
+            console.log(category.id);
+            theObj.ids[count] = category.id;
+            count++;
+        }
     }, 
     /**
      * throw an error if there is a problem
@@ -55,8 +84,5 @@ $(function () {
     function (error) {
         console.log(error);
     });
-    // let keys = Object.keys(allCatObj);
-    // console.log(keys);
-    // console.log(allCatObj[keys[0]]);
-    console.log(categoryResult);
+    console.log(theObj);
 });

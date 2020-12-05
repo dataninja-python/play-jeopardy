@@ -2,6 +2,10 @@ import $ = require("jquery");
 
 /**
  * This app allows a user to play jeopardy
+ * This was more challenging than I originally thought. Then, again I have little experience
+ * estimating the difficulty of projects like this. As always data related issues took up 80%
+ * of my time.
+ * sources: https://www.w3schools.com/js/js_json_intro.asp;
  */
 
 /**
@@ -27,11 +31,32 @@ const numOfCategories = 18;
 //   title: [],
 //   clues: []
 // }
-let categoryResult = [];
+let categoriesObj = {};
+let categoriesArr = [];
+let theJSON;
+let theText;
+let theObj = {
+  ids: [],
+  titles: [],
+  numOfQuestions: [],
+};
+let theName = "jeopardyCategories";
+let category;
+let ids;
+let titles;
+let counts;
 
-function storeCategoryData(category) {
-  categoryResult.push(category);
-}
+/**
+ * converts from JSON and stores category data as an array of js object
+ * @param category 
+ */
+// function storeCategories(category) {
+
+// }
+
+
+
+
 
 
 $(() => {
@@ -52,7 +77,15 @@ $(() => {
      * @param categories 
      */
     function (categories) {
-      categories.forEach(storeCategoryData);
+      // console.log(categories);
+      // after several hours failing to access my data it hit me that the api is sending JSON
+      // that must be converted...thanks for the heads up everyone
+      let count = 0;
+      for (category of categories) {
+        console.log(category.id);
+        theObj.ids[count] = category.id;
+        count++;
+      }
     },
     /**
      * throw an error if there is a problem
@@ -61,11 +94,6 @@ $(() => {
     function (error) {
       console.log(error);
     });
-  // let keys = Object.keys(allCatObj);
-  // console.log(keys);
-  // console.log(allCatObj[keys[0]]);
+  console.log(theObj);
   
-  console.log(categoryResult);
-  
-
 });
