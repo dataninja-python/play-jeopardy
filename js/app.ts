@@ -1,31 +1,9 @@
 import $ = require("jquery");
 
 /**
- * This app allows a user to play jeopardy
- * This was more challenging than I originally thought. Then, again I have little experience
- * estimating the difficulty of projects like this. As always data related issues took up 80%
- * of my time.
- * sources: https://www.w3schools.com/js/js_json_intro.asp;
- */
-
-/**
- * MASTER PSEUDOCODE:
- * 
- * MVP: app that allows a user to play a round of jeopardy with 3 categories and 5 questions and answers per clue
- * 1. pull a number of jeopardy category options
- * 2. narrow the selection down to just datasets with 5 questions
- * 3. remove unclean datasets
- * 4. select the first 3 datasets as categories
- * 5. store the game categories and all relevant information as 3 objects
- * 6. create the 3 category jeopardy front-end
- * 7. 
- * 
- */
-
-/**
  * GLOBAL VARIABLES 
  */
-const numOfCategories = 18;
+const numOfCategories = 1;
 // let allCatObj = {
 //   id: [],
 //   title: [],
@@ -46,6 +24,9 @@ let ids;
 let titles;
 let counts;
 
+// used in function to only call while still have questions available
+let click = 20;
+
 /**
  * converts from JSON and stores category data as an array of js object
  * @param category 
@@ -54,7 +35,13 @@ let counts;
 
 // }
 
-
+function isActiveGame() {
+  if (click > 0) {
+    return true;
+  } else {
+    return false;
+   }
+}
 
 
 
@@ -64,36 +51,47 @@ $(() => {
   // let message: string = "hi";
   // console.log(message);
 
+  $("#clue").on("click", function (event) {
+    event.preventDefault();
+    console.log(click);
+    let playGame = isActiveGame;
+    click--;
+    /**
+     * ajax call
+     */
+    $.ajax({
+      // limit the number of returned items to 42 to allow me to randomly select 3 easily
+      // url: `https://jservice.io/api/categories?count=${numOfCategories}`,
+      url: `https://jservice.io/api/random?count=${numOfCategories}`,
+    }).then(
+      /**
+       * pull the jeopardy category information from the database
+       * @param clues 
+       */
+      function (clues) {
+        // console.log(categories);
+        // after several hours failing to access my data it hit me that the api is sending JSON
+        // that must be converted...thanks for the heads up everyone
+        // false...i weas trying to access data outside of scope...my buddy Ben that used to work at Google helped me realize it while I was ranting
+        // console.log(clues);
+        console.log(clues[0].question);
+        console.log(clues[0].answer);
+        console.log(clues[0].value);
+        // let count = 0;
+        // for (category of categories) {
+        //   // console.log(category.id);
+        //   theObj.ids[count] = category.id;
+        //   count++;
+        // }
+        // console.log(theObj.ids[0]);
 
-  /**
-   * ajax call
-   */
-  $.ajax({
-    // limit the number of returned items to 42 to allow me to randomly select 3 easily
-    url: `https://jservice.io/api/categories?count=${numOfCategories}`,
-  }).then(
-    /**
-     * pull the jeopardy category information from the database
-     * @param categories 
-     */
-    function (categories) {
-      // console.log(categories);
-      // after several hours failing to access my data it hit me that the api is sending JSON
-      // that must be converted...thanks for the heads up everyone
-      let count = 0;
-      for (category of categories) {
-        console.log(category.id);
-        theObj.ids[count] = category.id;
-        count++;
-      }
-    },
-    /**
-     * throw an error if there is a problem
-     * @param error 
-     */
-    function (error) {
-      console.log(error);
+      },
+      /**
+       * throw an error if there is a problem
+       * @param error 
+       */
+      function (error) {
+        console.log(error);
+      });
     });
-  console.log(theObj);
-  
 });
