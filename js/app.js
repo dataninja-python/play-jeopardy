@@ -30,6 +30,7 @@ function getCategories() {
             clueIDs.push(category.id);
             clueTitles.push(category.title);
             clueNum.push(category.clues_count);
+            // console.log(category);
         });
     }, 
     /**
@@ -62,8 +63,8 @@ function getClues(theID) {
      */
     function (clues) {
         clues.forEach(function (clue) {
-            // push the id, title, and category
             console.log(clue.question);
+            return clue.question;
         });
     }, 
     /**
@@ -74,26 +75,64 @@ function getClues(theID) {
         console.log(error);
     });
 }
-var numOfCategories = 42;
+/**
+ * if id doesn't have a question do something...
+ */
+function rickRoll() {
+    console.log("hi");
+}
+// for now, hardcoded clues
+var finalIDs = [
+    11531,
+    11496,
+    11521,
+];
+var finalTitles = [
+    "mixed bag",
+    '"hot" stufff',
+    "acting families",
+];
+var finalNumOfClues = [
+    5,
+    5,
+    5
+];
+var numOfCategories = 9;
 var finalNumOfCategories = 3;
 var clueIDs = [];
 var clueTitles = [];
 var clueNum = [];
-var finalIDs = [];
-var finalQuestions = [];
-var finalAnswers = [];
-var finalValues = [];
+// let finalIDs = [];
+// let finalTitles = [];
+// let finalQuestions = [];
+// let finalAnswers = [];
+// let finalValues = [];
+var cluesNum1 = {};
+var cluesNum2 = {};
+var cluesNum3 = {};
+var cluesObj1 = {
+    "question": [],
+    "answer": [],
+    "value": []
+};
+var questions1 = [];
+var answers1 = [];
+// a class to store all the relevant jeopardy infomation for a category
+var Category = /** @class */ (function () {
+    function Category() {
+    }
+    return Category;
+}());
 $(function () {
     // initial test that typescript is compiling properly
     // let message: string | null = "Hello world";
     // console.log(message);
     // get initial categories from the database
     getCategories();
-    console.log(clueIDs);
-    console.log(clueTitles);
-    console.log(clueNum);
-    // selectCategories();
-    // console.log(finalIDs);
-    // finalIDs.forEach(getClues);
-    // getClues(finalIDs[0]);
+    // console.log(clueIDs);
+    // console.log(clueTitles);
+    // console.log(clueNum);
+    // test getting all data for final clue
+    var test = finalIDs[0];
+    questions1.push(getClues(test));
 });

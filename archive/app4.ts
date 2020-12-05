@@ -72,7 +72,9 @@ function getClues(theID) {
      */
     function (clues) {
       clues.forEach((clue) => {
-        console.log(clue.question);
+        console.log(clue);
+        allClues.push(clue);
+
       });
     },
     /**
@@ -122,16 +124,12 @@ let clueNum = [];
 // let finalAnswers = [];
 // let finalValues = [];
 
-let cluesNum1 = {};
-let cluesNum2 = {};
-let cluesNum3 = {};
-let cluesObj1 = {
-  "question"  : [],
-  "answer"    : [],
-  "value"     : [],
-};
-let questions1 = [];
-let answers1 = [];
+let cluesNum1 = [];
+let cluesNum2 = [];
+let cluesNum3 = [];
+let allClues = [];
+let questions = [];
+let answers = [];
 // a class to store all the relevant jeopardy infomation for a category
 class Category {
   id: number;
@@ -153,6 +151,17 @@ $((): void => {
   // test getting all data for final clue
   let test = finalIDs[0];
   getClues(test);
-  // console.log(cluesNum1);
+  test = finalIDs[1];
+  getClues(test);
+  test = finalIDs[2];
+  getClues(test);
+
+  // store the clues in separate categories
+  for (let i = 0; i < allClues.length; i++) {
+    if (i < 5) {
+      cluesNum1.push(allClues[i]);
+     }
+  }
+  console.log(cluesNum1);
   
 });
