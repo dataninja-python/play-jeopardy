@@ -138,8 +138,12 @@ $(function () {
 
           if (userIsRight) {
             userScore += parseInt(currentScore);
+            $("#result").html("correct");
+            $("#answer").html(currentAnswer);
           } else {
             userScore -= parseInt(currentScore);
+            $("#result").html("incorrect");
+            $("#answer").html(currentAnswer);
           }
 
           console.log(userScore); // reset answer box value to empty

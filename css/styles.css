@@ -1,0 +1,22 @@
+/* my custom styling */
+
+/* NOTE: sticky navbar was more tricky than I thought. I referred to w3  */
+/* for help: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp */
+
+
+
+nav {
+    position: absolute;
+    margin-top: 0;
+    z-index: 1;
+    height: 200px;
+}
+
+.nav-container .row {
+    display: flex;
+}
+
+header {
+    padding-top: 20px;
+    border-top: 1px dotted red;
+}

@@ -1,11 +1,24 @@
-**Jeo-MVP**
+**Play-Jeopardy MVP**
 
-This is a trivia app that allows a user to answer jeopardy questions.
+This is a trivia app that allows a user to answer jeopardy questions provided by the https://jservice.io/ api.
 
+**HOW TO PLAY**
+* click the "NEXT QUESTION" button to start and advance the game
+* afterwards, you will be provided with a random jeopardy trivia question
+* in the input section where it says "Enter your answer", enter your response as a statement (not a question as Jeopardy actually requires) in lowercase
+* IMPORTANT: to submit your response, you must click the submit button...hitting your enter key will not work
+* you will then find out if your questions is correct or not
+* if correct, you win prize money; else, you lose prize money
+* right now, you can only play 1 round which is 20 questions
+* so, after clicking and answering the 20th question, the game will reset when the "NEXT QUESTION" button is clicked again
+* if at any time you forget any of this the "RULES" button in the upper left corner of the app for a quick refresher
 
-**GOAL:**
-MVP app that allows a user to play a round of jeopardy
+**GIST**
+This is an MVP of a jeopardy app.
 
+This basic iteration was created in ~5 days. It is intended to improve my comprehension of key programming fundamentals and provide practice creating functional prototypes quickly. HTML, CSS, Typescript, Javascript, and Jquery were used in development. VS Code and neovim were used as code editors.
+
+Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my General Assembly Software Engineering Immersive study group for helping me refine the idea, find a good api, overcome obstacles, and keeping me motivated along what turned out to be a more challening journey than originally expected.
 
 **THE PLAN IN PSEUDOCODE**
 1. pull a number of jeopardy category options
@@ -19,48 +32,40 @@ MVP app that allows a user to play a round of jeopardy
 9. if the user answers correctly, give the money; else subtract the money
 10. display an updated score after each question and at end
 
-
-**THE PLAN IN ACTION**
+**DEV PLAN**
 [x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
 [x] limit user to answer only 20 questions total
-[] allow fuzzy answer matching
-[] enable scoring
+[x] allow fuzzy answer matching
+[x] enable scoring
 [x] display the question
-[] display "right" or "wrong"
-[] display answer
+[x] display "right" or "wrong"
+[x] display answer
 [] display score
 [] display rules in modal || have a sticky nav bar
 
-
-**HOW TO PLAY**
-
-
-
-
-
 **REQUIRED FEATURES**
-* Use HTML, CSS, JavaScript and JQuery
-* Host on github pages
-* Commit every day
-* Write a README.md file with explanation of tech, approach, link, installation instructions, unsolved problems, etc
-* Use AJAX to make a request to an external API and insert some of of the data retried into the DOM
-* Implement responsive design
-* Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
+[x] Use HTML, CSS, JavaScript and JQuery
+[] Host on github pages
+[x] Commit every day
+[x] Write a README.md file with explanation of tech, approach, link, installation instructions, unsolved problems, etc
+[x] Use AJAX to make a request to an external API and insert some of of the data retrived into the DOM
+[] Implement responsive design
+[] Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
 
-
-**POTENTIAL FEATURES**
-* add categories
-* set up to play more like jeopardy with clicking of multiple squares
-* allow to play a full jeopardy game by rounds
-* enable the daily double where you can place a wager of up to all your current money
-
+**POTENTIAL FUTURE FEATURES**
+[] learn to use adobe XD, figma or similar tool to improve UX/UI
+[] add question categories
+[] set up to play more like jeopardy with clicking of multiple squares
+[] allow to play a full jeopardy game
+[] enable the daily double where you can place a wager of up to all your current money
+[] make answers have to be in the form of a question
+[] organize questions in increasing difficulty
+[] ensure all sources in code are listed here as well
 
 **ISSUES**
-
 _Time Management_
 Estimating how long things would take was far more challenging than I anticipated.
 Then, again I have little experience estimating the difficulty of projects like this. Data related issues have taken up 80% of time to date.
-
 
 _Undefined Data_
 After losing a day to api related data issues, I was forced to remove the need for repeated calls to the api by saving the needed data.
@@ -72,9 +77,9 @@ In my quest to have at least a working knowledge of the most popular languages, 
 _Front-end_
 My inadequacies with UX/UI are a major reason for taking this course. I want to push myself to do more than create a functional ugly trivia game. However, it is currently Sunday, 12/6/2020, and the project must be done in 2 days. Thus, I fear I may fail to produce something attractive...again. However, I plan to take at least 1 adobe XD tutorial and use the application to help accelerate my understanding of how to produce better UX/UI.
 
+**SOURCE LIST**
+Below is a best effort to assemble a list of resources used in this project; however, some sources may be listed directly in the code where used and others may be mistakenly omitted. Apologies in advance to source unintentionally not listed.
 
-
-**PARTIAL SOURCE LIST**
 https://www.codegrepper.com/code-examples/javascript/javascript+read+file+lines+into+array+vanilla
 https://www.codegrepper.com/code-examples/python/python+write+requests+response+to+text+file
 https://tutorialedge.net/golang/consuming-restful-api-with-go/
@@ -89,4 +94,4 @@ https://www.w3schools.com/jsref/jsref_tolowercase.asp#:~:text=The%20toLowerCase(
 https://www.geeksforgeeks.org/html-clearing-the-input-field/
 https://www.youtube.com/watch?v=k7XcOQGbzaQ
 https://letsxd.com/?promoid=8WLD53GJ&mv=other
-
+https://codepen.io/nathancockerill/pen/OQyXWb
