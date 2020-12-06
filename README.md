@@ -2,6 +2,36 @@
 
 This is a trivia app that allows a user to answer jeopardy questions.
 
+
+**GOAL:**
+MVP app that allows a user to play a round of jeopardy
+
+
+**THE PLAN IN PSEUDOCODE**
+1. pull a number of jeopardy category options
+2. narrow the selection down to just datasets with 5 questions
+3. remove unclean datasets
+4. select the first 3 datasets as categories
+5. store the game categories and all relevant information as 3 objects
+6. create the jeopardy front-end
+7. allow user to click on a dollar amount to get a question
+8. user can then answer the question
+9. if the user answers correctly, give the money; else subtract the money
+10. display an updated score after each question and at end
+
+
+**THE PLAN IN ACTION**
+[x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
+[x] limit user to answer only 20 questions total
+[] allow fuzzy answer matching
+[] enable scoring
+[] display the question
+[] display "right" or "wrong"
+[] display answer
+[] display score
+[] display rules in modal || have a sticky nav bar
+
+
 **HOW TO PLAY**
 
 
@@ -18,38 +48,12 @@ This is a trivia app that allows a user to answer jeopardy questions.
 * Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
 
 
-
-
 **POTENTIAL FEATURES**
+* add categories
+* set up to play more like jeopardy with clicking of multiple squares
+* allow to play a full jeopardy game by rounds
+* enable the daily double where you can place a wager of up to all your current money
 
-
-
-
-**GOAL:**
-MVP app that allows a user to play a round of jeopardy
-
-**THE PLAN IN PSEUDOCODE**
-1. pull a number of jeopardy category options
-2. narrow the selection down to just datasets with 5 questions
-3. remove unclean datasets
-4. select the first 3 datasets as categories
-5. store the game categories and all relevant information as 3 objects
-6. create the jeopardy front-end
-7. allow user to click on a dollar amount to get a question
-8. user can then answer the question
-9. if the user answers correctly, give the money; else subtract the money
-10. display an updated score after each question and at end
-
-**THE PLAN IN ACTION**
-[x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
-[x] limit user to answer only 20 questions total
-[] allow fuzzy answer matching
-[] enable scoring
-[] display the question
-[] display "right" or "wrong"
-[] display answer
-[] display score
-[] display rules in modal
 
 **ISSUES**
 

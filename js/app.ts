@@ -41,6 +41,9 @@ let userIsRight = false;
 
 // }
 
+/**
+ * sets game state = is the game active or not
+ */
 function isActiveGame() {
   if (click > 0) {
     playGame = true;
@@ -48,6 +51,20 @@ function isActiveGame() {
     playGame = false;
   }
   click--;
+}
+
+/**
+ * checks if user's answer is correct
+ * @param correctAnswer 
+ * @param userAnswer 
+ */
+function isAnswerCorrect(correctAnswer, userAnswer) {
+  // attempt to allow a 'fuzzy' match of user to provided answer
+  if (correctAnswer === userAnswer || correctAnswer.search(userAnswer)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -96,12 +113,16 @@ $(() => {
           $("#question").html(currentQuestion);
           $("#money").html(currentScore);
 
-          $("#answer-btn").on("click", function (event) { 
+          // on submitting get the user's answer
+          $("#answer-btn").on("click", function (event) {
+            // get user's answer
             let userInput = $("#answer-box").val();
             userInput = String(userInput).toLowerCase();
             console.log(userInput);
+            // is the answer correct?
+
             // reset answer box value to empty
-            $("#answer-box").html("");
+            // replaced code here with direct html code
           })
         },
         /**

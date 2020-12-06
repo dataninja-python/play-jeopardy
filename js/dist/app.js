@@ -38,6 +38,9 @@ var userIsRight = false;
  */
 // function storeCategories(category) {
 // }
+/**
+ * sets game state = is the game active or not
+ */
 function isActiveGame() {
     if (click > 0) {
         playGame = true;
@@ -46,6 +49,20 @@ function isActiveGame() {
         playGame = false;
     }
     click--;
+}
+/**
+ * checks if user's answer is correct
+ * @param correctAnswer
+ * @param userAnswer
+ */
+function isAnswerCorrect(correctAnswer, userAnswer) {
+    // attempt to allow a 'fuzzy' match of user to provided answer
+    if (correctAnswer === userAnswer || correctAnswer.search(userAnswer)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 $(function () {
     // simple test to make sure load function works
@@ -87,12 +104,15 @@ $(function () {
                 currentScore = clues[0].value;
                 $("#question").html(currentQuestion);
                 $("#money").html(currentScore);
+                // on submitting get the user's answer
                 $("#answer-btn").on("click", function (event) {
+                    // get user's answer
                     var userInput = $("#answer-box").val();
                     userInput = String(userInput).toLowerCase();
                     console.log(userInput);
+                    // is the answer correct?
                     // reset answer box value to empty
-                    $("#answer-box").html("");
+                    // replaced code here with direct html code
                 });
             }, 
             /**
