@@ -25,7 +25,7 @@ MVP app that allows a user to play a round of jeopardy
 [x] limit user to answer only 20 questions total
 [] allow fuzzy answer matching
 [] enable scoring
-[] display the question
+[x] display the question
 [] display "right" or "wrong"
 [] display answer
 [] display score
@@ -57,14 +57,21 @@ MVP app that allows a user to play a round of jeopardy
 
 **ISSUES**
 
-TIME MANAGEMENT
+_Time Management_
 Estimating how long things would take was far more challenging than I anticipated.
 Then, again I have little experience estimating the difficulty of projects like this. Data related issues have taken up 80% of time to date.
 
 
-UNDEFINED DATA
+_Undefined Data_
 After losing a day to api related data issues, I was forced to remove the need for repeated calls to the api by saving the needed data.
-Frustrated with javascript, I turned to a language better suited for data munging Python. I also considered Go, Rust, and Ruby. But Python solved the problem fastest.
+Frustrated with javascript, I turned to a language better suited for data munging Python. I also considered Go, Rust, and Ruby. But Python solved the problem fastest. NOTE: after taking a break to complain to a buddy with 10 years programming experience at Google, he helped me discover I was trying to log the data outside of the callback scope...rookie move.
+
+_Typescript_
+In my quest to have at least a working knowledge of the most popular languages, and because I like the additional features (types, error checking on compilation, backwards compatibility, etc) it adds, I spent a few hours - at least 1 of them with Leland - making so I could use TypeScript. While it adds some overhead and slows my development time slightly, knowing the code I write works as planned is priceless.
+
+_Front-end_
+My inadequacies with UX/UI are a major reason for taking this course. I want to push myself to do more than create a functional ugly trivia game. However, it is currently Sunday, 12/6/2020, and the project must be done in 2 days. Thus, I fear I may fail to produce something attractive...again. However, I plan to take at least 1 adobe XD tutorial and use the application to help accelerate my understanding of how to produce better UX/UI.
+
 
 
 **PARTIAL SOURCE LIST**
@@ -80,4 +87,6 @@ https://www.aspforums.net/Threads/562975/Count-number-of-times-Button-is-clicked
 https://www.w3schools.com/jsref/met_loc_reload.asp
 https://www.w3schools.com/jsref/jsref_tolowercase.asp#:~:text=The%20toLowerCase()%20method%20converts,a%20string%20to%20uppercase%20letters.
 https://www.geeksforgeeks.org/html-clearing-the-input-field/
+https://www.youtube.com/watch?v=k7XcOQGbzaQ
+https://letsxd.com/?promoid=8WLD53GJ&mv=other
 

@@ -32,7 +32,7 @@ let currentAnswer;
 let currentScore;
 let playGame = true;
 let userIsRight = false;
-
+let userAnswer;
 /**
  * converts from JSON and stores category data as an array of js object
  * @param category 
@@ -108,7 +108,7 @@ $(() => {
           console.log(clues[0].value);
 
           currentQuestion = clues[0].question;
-          currentAnswer = String(clues[0].answer).toLowerCase();
+          currentAnswer = clues[0].answer;
           currentScore = clues[0].value;
           $("#question").html(currentQuestion);
           $("#money").html(currentScore);
@@ -117,10 +117,31 @@ $(() => {
           $("#answer-btn").on("click", function (event) {
             // get user's answer
             let userInput = $("#answer-box").val();
-            userInput = String(userInput).toLowerCase();
             console.log(userInput);
             // is the answer correct?
+            // console.log(currentAnswer.search(userInput));
+            let tmpAns = currentAnswer.toLowerCase();
+            let tmpUsr1 = String(userInput);
+            let tmpUsr = tmpUsr1.toLowerCase();
+            // allows partial or fuzzy matches to still count
+            let fuzzyResult = tmpAns.search(tmpUsr);
+            if (tmpAns === tmpUsr) {
+              userIsRight = true;
+            } else if (fuzzyResult >= 0) { 
+              userIsRight = true;
+            } else {
+              userIsRight = false;
+            }
+            console.log(userIsRight);
 
+            // add scoring
+            if (userIsRight) {
+              userScore += parseInt(currentScore);
+            } else {
+              userScore -= parseInt(currentScore);
+            }
+            console.log(userScore);
+            
             // reset answer box value to empty
             // replaced code here with direct html code
           })
