@@ -15,7 +15,7 @@ This is a trivia app that allows a user to answer jeopardy questions.
 * Write a README.md file with explanation of tech, approach, link, installation instructions, unsolved problems, etc
 * Use AJAX to make a request to an external API and insert some of of the data retried into the DOM
 * Implement responsive design
-* Have one or more ocmplex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
+* Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
 
 
 
@@ -42,7 +42,7 @@ MVP app that allows a user to play a round of jeopardy
 
 **THE PLAN IN ACTION**
 [x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
-[] limit user to answer only 20 questions total
+[x] limit user to answer only 20 questions total
 [] allow fuzzy answer matching
 [] enable scoring
 [] display the question
@@ -73,4 +73,7 @@ https://www.w3schools.com/js/js_api_intro.asp
 https://www.w3schools.com/js/js_json_intro.asp
 https://pngimg.com/download/39293
 https://www.aspforums.net/Threads/562975/Count-number-of-times-Button-is-clicked-in-JavaScript-and-jQuery/
+https://www.w3schools.com/jsref/met_loc_reload.asp
+https://www.w3schools.com/jsref/jsref_tolowercase.asp#:~:text=The%20toLowerCase()%20method%20converts,a%20string%20to%20uppercase%20letters.
+https://www.geeksforgeeks.org/html-clearing-the-input-field/
 

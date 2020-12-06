@@ -30,6 +30,8 @@ let userScore = 0;
 let currentQuestion;
 let currentAnswer;
 let currentScore;
+let playGame = true;
+let userIsRight = false;
 
 /**
  * converts from JSON and stores category data as an array of js object
@@ -41,10 +43,11 @@ let currentScore;
 
 function isActiveGame() {
   if (click > 0) {
-    return true;
+    playGame = true;
   } else {
-    return false;
+    playGame = false;
   }
+  click--;
 }
 
 
@@ -60,9 +63,9 @@ $(() => {
     // const $counter = $("<p>");
     // $counter.text(`${click} of clues left`);
     $("#count").html(`${click} of 20 clues left`);
-    let playGame = isActiveGame;
-    click--;
-
+    // let playGame = true;
+    // click--;
+    isActiveGame();
 
     if (playGame) {
       /**
@@ -78,7 +81,6 @@ $(() => {
          * @param clues 
          */
         function (clues) {
-          // console.log(categories);
           // after several hours failing to access my data it hit me that the api is sending JSON
           // that must be converted...thanks for the heads up everyone
           // false...i weas trying to access data outside of scope...my buddy Ben that used to work at Google helped me realize it while I was ranting
@@ -89,17 +91,18 @@ $(() => {
           console.log(clues[0].value);
 
           currentQuestion = clues[0].question;
-          currentAnswer = clues[0].answer;
+          currentAnswer = String(clues[0].answer).toLowerCase();
           currentScore = clues[0].value;
           $("#question").html(currentQuestion);
-          // let count = 0;
-          // for (category of categories) {
-          //   // console.log(category.id);
-          //   theObj.ids[count] = category.id;
-          //   count++;
-          // }
-          // console.log(theObj.ids[0]);
+          $("#money").html(currentScore);
 
+          $("#answer-btn").on("click", function (event) { 
+            let userInput = $("#answer-box").val();
+            userInput = String(userInput).toLowerCase();
+            console.log(userInput);
+            // reset answer box value to empty
+            $("#answer-box").html("");
+          })
         },
         /**
          * throw an error if there is a problem
@@ -110,6 +113,10 @@ $(() => {
         });
     } else {
       // game  is over
+      // display end of game
+      // display score
+      // refresh browser in 3 seconds
+      location.reload();
     }
   });
 });

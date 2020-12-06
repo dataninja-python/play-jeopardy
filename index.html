@@ -15,8 +15,8 @@
             <div id="header-container" class="container">
                 <div class="row1"></div>
                 <div class="col1">
-                    <h1>Can You Beat Jeopardy?</h1>
-                    <!-- <h3>The hardest trivia app on the net...ALLEGEDLY!</h3> -->
+                    <h1>20 Jeopardy Questions</h1>
+                    <h3>How many can you answer?</h3>
                 </div>
                 <div class="row2">
                     <div>
@@ -35,9 +35,17 @@
             <div id="main-container">
                 <div class="row1">
                     <div>
+                        <p>Question:</p>
                         <p id="question"></p>
+                        <p>Worth:</p>
+                        <p id="money"></p>
                     </div>
                 </div>
+            </div>
+            <div>
+                <p>Answer:</p>
+                <input id="answer-box" type="text" name="answer" onfocus="this.value=''" placeholder="Enter your answer">
+                <button id="answer-btn">Click to submit</button>
             </div>
         </main>
         <footer></footer>
