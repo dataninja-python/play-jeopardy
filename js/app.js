@@ -33,6 +33,8 @@ var currentScore;
 var playGame = true;
 var userIsRight = false;
 var userAnswer;
+var userRightAnswers = 0;
+var userWrongAnswers = 0;
 /**
  * converts from JSON and stores category data as an array of js object
  * @param category
@@ -132,11 +134,15 @@ $(function () {
                         userScore += parseInt(currentScore);
                         $("#result").html("correct");
                         $("#answer").html(currentAnswer);
+                        userRightAnswers++;
+                        $("#table-right").html(String(userRightAnswers));
                     }
                     else {
                         userScore -= parseInt(currentScore);
                         $("#result").html("incorrect");
                         $("#answer").html(currentAnswer);
+                        userWrongAnswers++;
+                        $("#table-wrong").html(String(userWrongAnswers));
                     }
                     console.log(userScore);
                     // reset answer box value to empty

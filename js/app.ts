@@ -33,6 +33,8 @@ let currentScore;
 let playGame = true;
 let userIsRight = false;
 let userAnswer;
+let userRightAnswers = 0;
+let userWrongAnswers = 0;
 /**
  * converts from JSON and stores category data as an array of js object
  * @param category 
@@ -139,10 +141,14 @@ $(() => {
               userScore += parseInt(currentScore);
               $("#result").html("correct");
               $("#answer").html(currentAnswer);
+              userRightAnswers++;
+              $("#table-right").html(String(userRightAnswers));
             } else {
               userScore -= parseInt(currentScore);
               $("#result").html("incorrect");
               $("#answer").html(currentAnswer);
+              userWrongAnswers++;
+              $("#table-wrong").html(String(userWrongAnswers));
             }
             console.log(userScore);
             
