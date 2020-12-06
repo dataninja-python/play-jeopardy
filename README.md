@@ -1,8 +1,8 @@
-**Play-Jeopardy MVP**
+#Play-Jeopardy MVP
 
 This is a trivia app that allows a user to answer jeopardy questions provided by the https://jservice.io/ api.
 
-**HOW TO PLAY**
+#HOW TO PLAY
 * click the "NEXT QUESTION" button to start and advance the game
 * afterwards, you will be provided with a random jeopardy trivia question
 * in the input section where it says "Enter your answer", enter your response as a statement (not a question as Jeopardy actually requires) in lowercase
@@ -13,16 +13,16 @@ This is a trivia app that allows a user to answer jeopardy questions provided by
 * so, after clicking and answering the 20th question, the game will reset when the "NEXT QUESTION" button is clicked again
 * if at any time you forget any of this the "RULES" button in the upper left corner of the app for a quick refresher
 
-**GIST**
+#GIST
 This is an MVP of a jeopardy app.
 
 This basic iteration was created in ~5 days. It is intended to improve my comprehension of key programming fundamentals and provide practice creating functional prototypes quickly. HTML, CSS, Typescript, Javascript, and Jquery were used in development. VS Code and neovim were used as code editors.
 
 Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my General Assembly Software Engineering Immersive study group for helping me refine the idea, find a good api, overcome obstacles, and keeping me motivated along what turned out to be a more challening journey than originally expected.
 
-**THE PLAN IN PSEUDOCODE**
+#THE PLAN IN PSEUDOCODE
 1. pull a number of jeopardy category options
-2. narrow the selection down to just datasets with 5 questions
+2. narrow selection down to just datasets with 5 questions
 3. remove unclean datasets
 4. select the first 3 datasets as categories
 5. store the game categories and all relevant information as 3 objects
@@ -32,7 +32,7 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 9. if the user answers correctly, give the money; else subtract the money
 10. display an updated score after each question and at end
 
-**DEV PLAN**
+#DEV PLAN
 [x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
 [x] limit user to answer only 20 questions total
 [x] allow fuzzy answer matching
@@ -43,16 +43,17 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [] display score
 [] display rules in modal || have a sticky nav bar
 
-**REQUIRED FEATURES**
+#REQUIRED FEATURES
 [x] Use HTML, CSS, JavaScript and JQuery
 [] Host on github pages
 [x] Commit every day
 [x] Write a README.md file with explanation of tech, approach, link, installation instructions, unsolved problems, etc
 [x] Use AJAX to make a request to an external API and insert some of of the data retrived into the DOM
 [] Implement responsive design
-[] Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
+[x] Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
 
-**POTENTIAL FUTURE FEATURES**
+#POTENTIAL FUTURE FEATURES
+[] fix scoring and right/wrong counting system
 [] learn to use adobe XD, figma or similar tool to improve UX/UI
 [] add question categories
 [] set up to play more like jeopardy with clicking of multiple squares
@@ -61,8 +62,11 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [] make answers have to be in the form of a question
 [] organize questions in increasing difficulty
 [] ensure all sources in code are listed here as well
+[] make game automatically play from a single function call
+[] remove but where person can enter multiple answers to the same question
+[] add random responses to right and wrong answers
 
-**ISSUES**
+#ISSUES
 _Time Management_
 Estimating how long things would take was far more challenging than I anticipated.
 Then, again I have little experience estimating the difficulty of projects like this. Data related issues have taken up 80% of time to date.
@@ -95,3 +99,4 @@ https://www.geeksforgeeks.org/html-clearing-the-input-field/
 https://www.youtube.com/watch?v=k7XcOQGbzaQ
 https://letsxd.com/?promoid=8WLD53GJ&mv=other
 https://codepen.io/nathancockerill/pen/OQyXWb
+w3d02 Leland morning exercise on modals

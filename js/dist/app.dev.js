@@ -28,7 +28,8 @@ var ids;
 var titles;
 var counts; // used in function to only call while still have questions available
 
-var click = 20;
+var click = 20; // let counter = 1;
+
 var userScore = 0;
 var currentQuestion;
 var currentAnswer;
@@ -78,6 +79,8 @@ $(function () {
   // simple test to make sure load function works
   // let message: string = "hi";
   // console.log(message);
+  userRightAnswers = 0;
+  userWrongAnswers = 0;
   $("#clue").on("click", function (event) {
     event.preventDefault();
     console.log(click); // const $counter = $("<p>");
@@ -85,6 +88,10 @@ $(function () {
 
     $("#count").html(click + " of 20 clues left"); // let playGame = true;
     // click--;
+
+    /**
+    * checks to make sure the play is active
+    */
 
     isActiveGame();
 
@@ -139,20 +146,23 @@ $(function () {
           console.log(userIsRight); // add scoring
 
           if (userIsRight) {
-            userScore += parseInt(currentScore);
+            userScore += currentScore;
+            userRightAnswers = userRightAnswers + 1;
             $("#result").html("correct");
             $("#answer").html(currentAnswer);
-            userRightAnswers++;
             $("#table-right").html(String(userRightAnswers));
+            $("#table-win").html(String(userScore));
           } else {
-            userScore -= parseInt(currentScore);
+            userScore -= currentScore;
+            userWrongAnswers = userWrongAnswers + 1;
             $("#result").html("incorrect");
             $("#answer").html(currentAnswer);
-            userWrongAnswers++;
             $("#table-wrong").html(String(userWrongAnswers));
+            $("#table-win").html(String(userScore));
           }
 
-          console.log(userScore); // reset answer box value to empty
+          console.log(userScore);
+          $("#answer-box").val(""); // reset answer box value to empty
           // replaced code here with direct html code
         });
       },

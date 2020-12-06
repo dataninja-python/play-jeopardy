@@ -94,8 +94,6 @@ $(() => {
     isActiveGame();
 
     if (playGame) {
-      // user money is set at game time
-      let userMoney = 0;
       /**
        * ajax call
        */
@@ -120,9 +118,9 @@ $(() => {
 
           currentQuestion = clues[0].question;
           currentAnswer = clues[0].answer;
-          currentScore = parseInt(clues[0].value);
+          currentScore = clues[0].value;
           $("#question").html(currentQuestion);
-          $("#money").html(String(currentScore));
+          $("#money").html(currentScore);
 
           // on submitting get the user's answer
           $("#answer-btn").on("click", function (event) {
@@ -147,22 +145,21 @@ $(() => {
 
             // add scoring
             if (userIsRight) {
-              userMoney += currentScore;
+              userScore += currentScore;
               userRightAnswers = userRightAnswers + 1;
               $("#result").html("correct");
-              // $("#answer").html(currentAnswer);
-              // $("#table-right").html(String(userRightAnswers));
-              // $("#table-win").html(String(userMoney));
+              $("#answer").html(currentAnswer);
+              $("#table-right").html(String(userRightAnswers));
+              $("#table-win").html(String(userScore));
             } else {
-              userMoney -= currentScore;
+              userScore -= currentScore;
               userWrongAnswers = userWrongAnswers + 1;
               $("#result").html("incorrect");
-              // $("#answer").html(currentAnswer);
-              // $("#table-wrong").html(String(userWrongAnswers));
-              // $("#table-win").html(String(userMoney));
+              $("#answer").html(currentAnswer);
+              $("#table-wrong").html(String(userWrongAnswers));
+              $("#table-win").html(String(userScore));
             }
             console.log(userScore);
-            $("#answer-box").val("");
             
             // reset answer box value to empty
             // replaced code here with direct html code

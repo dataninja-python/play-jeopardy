@@ -5,18 +5,82 @@
 
 
 
-nav {
-    position: absolute;
-    margin-top: 0;
-    z-index: 1;
-    height: 200px;
+#navbar {
+    overflow: hidden;
+    /* position: absolute; */
+    /* top: 10px; */
+    /* left: 20px; */
+    /* z-index: 1; */
+    /* height: 30px; */
+    /* width: 250px; */
+    /* border: 1px dashed red; */
 }
 
 .nav-container .row {
     display: flex;
+    justify-content: center;
+}
+
+.nav-container .col {
+    margin: 5px;
 }
 
 header {
     padding-top: 20px;
-    border-top: 1px dotted red;
+    /* border: 1px dotted red; */
+}
+
+
+#modal {
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/* this puts modal in front of the body */
+	overflow: auto;
+	display: none;
+}
+
+#modal-textbox {
+	background-color: white;
+	height: 350px;
+	width: 550px;
+	border-radius: 2px;
+	margin: 150px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	padding: 2%;
+	line-height: 120%;
+}
+
+#modal-footer {
+	padding: 2%;
+	line-height: 120%;
+	text-align: right;
+}
+
+.modal-buttons, .btns {
+	padding: 14px 18px;
+	background-color: #677996;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+	font-family: "Arial";
+	cursor: pointer;
+
+}
+
+.modal-buttons:hover, .btns:hover {
+	padding: 14px 18px;
+	background-color: white;
+	border: 2px solid #677996;
+	outline: none;
+	border-radius: 3px;
+	color: #677996;
+	font-family: "Arial";
+	cursor: pointer;
+
 }

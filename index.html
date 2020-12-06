@@ -12,14 +12,28 @@
 
 <body>
     <div id="body-container" class="container">
-        <nav id="nav">
+        <nav id="navbar">
             <div class="nav-container">
                 <div class="row">
-                    <div>
-                        <button id="rules">RULES</button>
+                    <div class="col col1">
+                        <button id="openModal" class="modal-buttons">RULES</button>
+                        <div id="modal" class="rules">
+                            <div id="modal-textbox" class="rules">
+                                <a id="close" href="#">Close</a>
+                                <h2>20 Questions Rules</h2>
+                                <p>Goal: get the highest score you can.</p>
+                                <p>Start: click "NEXT QUESTION" button. Play: give an answer not in question form and
+                                    click the button. Score: get the right answer to earn the money displayed; lose the
+                                    money for a wrong answer.</p>
+                                <p>Have Fun!</p>
+                            </div>
+                            <!-- <div id="modal-footer" class="footer">
+                                <button class="modal-buttons" id="close" href="#">Close</button>
+                            </div> -->
+                        </div>
                     </div>
-                    <div>
-                        <button id="clue">NEXT QUESTION</button>
+                    <div class="col col2">
+                        <button id="clue" class="btns">NEXT QUESTION</button>
                     </div>
                 </div>
         </nav>
@@ -52,8 +66,8 @@
             <div>
                 <p>Result:</p>
                 <p id="result"></p>
-                <input id="answer-box" type="text" name="answer" onfocus="this.value=''"
-                    placeholder="Enter your answer">
+                <!-- <input id="answer-box" type="text" name="answer" onfocus="this.value=''" placeholder="Enter your answer"> -->
+                <input id="answer-box" type="text" name="answer" placeholder="Enter your answer">
                 <button id="answer-btn">Click to submit</button>
             </div>
             <div id="results-container">
