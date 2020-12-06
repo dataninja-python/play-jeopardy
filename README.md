@@ -24,9 +24,11 @@ This is a trivia app that allows a user to answer jeopardy questions.
 
 
 
-**THE PLAN IN PSEUDOCODE**
+
 **GOAL:**
 MVP app that allows a user to play a round of jeopardy
+
+**THE PLAN IN PSEUDOCODE**
 1. pull a number of jeopardy category options
 2. narrow the selection down to just datasets with 5 questions
 3. remove unclean datasets
@@ -38,10 +40,16 @@ MVP app that allows a user to play a round of jeopardy
 9. if the user answers correctly, give the money; else subtract the money
 10. display an updated score after each question and at end
 
-
-**MODIFICATIONS**
-* due to data issues, MVP was simplifid to allow the user to get random questions
-
+**THE PLAN IN ACTION**
+[x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
+[] limit user to answer only 20 questions total
+[] allow fuzzy answer matching
+[] enable scoring
+[] display the question
+[] display "right" or "wrong"
+[] display answer
+[] display score
+[] display rules in modal
 
 **ISSUES**
 
