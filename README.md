@@ -81,6 +81,9 @@ In my quest to have at least a working knowledge of the most popular languages, 
 _Front-end_
 My inadequacies with UX/UI are a major reason for taking this course. I want to push myself to do more than create a functional ugly trivia game. However, it is currently Sunday, 12/6/2020, and the project must be done in 2 days. Thus, I fear I may fail to produce something attractive...again. However, I plan to take at least 1 adobe XD tutorial and use the application to help accelerate my understanding of how to produce better UX/UI.
 
+_Scoring Issue_
+To fix an issue with scoring I was forced to refactor my code and put sections into functions.
+
 **SOURCE LIST**
 Below is a best effort to assemble a list of resources used in this project; however, some sources may be listed directly in the code where used and others may be mistakenly omitted. Apologies in advance to source unintentionally not listed.
 
@@ -100,3 +103,8 @@ https://www.youtube.com/watch?v=k7XcOQGbzaQ
 https://letsxd.com/?promoid=8WLD53GJ&mv=other
 https://codepen.io/nathancockerill/pen/OQyXWb
 w3d02 Leland morning exercise on modals
+https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
+https://www.w3schools.com/js/js_api_web_storage.asp
+https://www.w3schools.com/jsref/prop_win_localstorage.asp
+https://www.w3schools.com/jsref/prop_win_sessionstorage.asp
+https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/

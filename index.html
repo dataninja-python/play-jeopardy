@@ -42,7 +42,6 @@
                 <div class="row">
                     <div class="col1">
                         <h1>20 Jeopardy Questions</h1>
-                        <h3>How many can you answer?</h3>
                     </div>
                 </div>
                 <div>
@@ -53,36 +52,20 @@
         <main>
             <div id="main-container">
                 <div class="row">
-                    <div>
-                        <p>Question:</p>
-                        <p id="question"></p>
-                        <p>Worth:</p>
-                        <p id="money"></p>
-                        <p>Answer:</p>
-                        <p id="answer"></p>
+                    <div id="display-container">
                     </div>
                 </div>
             </div>
             <div>
-                <p>Result:</p>
                 <p id="result"></p>
-                <!-- <input id="answer-box" type="text" name="answer" onfocus="this.value=''" placeholder="Enter your answer"> -->
-                <input id="answer-box" type="text" name="answer" placeholder="Enter your answer">
-                <button id="answer-btn">Click to submit</button>
+                <!-- the answer submission form -->
+                <form>
+                    <input type="text" id="answer-box" name="answer" placeholder="Enter your answer here">
+                    <input type="submit" id="answer-submit" value="Submit">
+                </form>
             </div>
             <div id="results-container">
-                <table>
-                    <tr>
-                        <th>Right</th>
-                        <th>Wrong</th>
-                        <th>Winnings</th>
-                    </tr>
-                    <tr>
-                        <td id="table-right" class="table-data">0</td>
-                        <td id="table-wrong" class="table-data">0</td>
-                        <td id="table-win" class="table-data">0</td>
-                    </tr>
-                </table>
+               <div id="money-score"></div>
             </div>
         </main>
         <footer></footer>
