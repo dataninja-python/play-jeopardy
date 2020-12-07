@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeopardy</title>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="./css/table-styles.css">
+    <!-- <link rel="stylesheet" href="./css/table-styles.css"> -->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -22,9 +22,9 @@
                                 <a id="close" href="#">Close</a>
                                 <h2>20 Questions Rules</h2>
                                 <p>Goal: get the highest score you can.</p>
-                                <p>Start: click "NEXT QUESTION" button. Play: give an answer (in lowercase and not as a
+                                <p>Start: click "PLAY" button. Play: click "Question" button, give an answer (in lowercase and not as a
                                     question) and
-                                    click the button. Score: get the right answer to earn the money displayed; lose the
+                                    click submit. Score: get the right answer to earn the money displayed; lose the
                                     money for a wrong answer.</p>
                                 <p>Have Fun!</p>
                             </div>
@@ -34,6 +34,12 @@
                         </div>
                     </div>
                     <div class="col col2">
+                        <button id="play" class="btns">PLAY</button>
+                    </div>
+                    <div class="col col2">
+                        <button id="quit" class="btns">QUIT</button>
+                    </div>
+                    <div class="col col3">
                         <button id="clue" class="btns">NEXT QUESTION</button>
                     </div>
                 </div>
@@ -45,9 +51,7 @@
                         <h1>20 Jeopardy Questions</h1>
                     </div>
                 </div>
-                <div>
-                    <p id="count"></p>
-                </div>
+                <div id="count" class="row">X of 20 clues left</div>
             </div>
         </header>
         <main>
@@ -55,10 +59,10 @@
                 <div id="tv-interior">
                     <div class="row">
                         <div id="display-container">
-                            <p id="question-insertion"></p>
-                            <p id="value-insertion"></p>
-                            <p id="answer-insertion"></p>
-                            <p id="result-insertion"></p>
+                            <div id="question-insertion" class="insert"></div>
+                            <div id="value-insertion" class="insert"></div>
+                            <div id="answer-insertion" class="insert"></div>
+                            <div id="result-insertion" class="insert"></div>
                         </div>
                     </div>
                 </div>

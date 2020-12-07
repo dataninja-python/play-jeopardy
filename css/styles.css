@@ -105,6 +105,13 @@ header {
 	/* overflow: auto; */
 }
 
+#count {
+	text-align: center;
+	padding-top: 5px;
+	margin-bottom: 2px;
+	font-size: 1.1em;
+}
+
 #main-container-bottom {
 	margin: 0 auto;
 	text-align: center;
@@ -122,4 +129,37 @@ header {
 
 .money {
 	padding: 10px;
+}
+
+#answer-submit {
+	background-color: #592A0E;
+	color: white;
+	pointer-events: auto;
+	border-radius: 3px;
+}
+
+#display-container{
+	/* border: 1px dashed black; */
+	width: 500px;
+	height: 350px;
+	/* padding-left: 100px; */
+	/* padding-bottom: 50px; */
+	/* padding-right: -50px; */
+	z-index: 1;
+	align-items: center;
+	margin: auto;
+	overflow: auto;
+	/* background-color: #BFB3A4; */
+}
+
+#question-insertion {
+	margin-top: 60px;
+	margin-left: 50px;
+	margin-right: 100px;
+	overflow: auto;
+}
+
+#value-insertion, #answer-insertion, #result-insertion {
+	margin-top: 10px;
+	margin-left: 50px;;
 }

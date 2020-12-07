@@ -16,5 +16,5 @@ $(function () {
         $modal.css("display", "none");
     };
     $closeBtn.on("click", closeModal);
-    // setTimeout(openModal, 5000);
+    // setTimeout(openModal, 6000);
 });

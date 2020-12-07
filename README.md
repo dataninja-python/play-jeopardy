@@ -59,12 +59,16 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 
 # BUGS
 
-[] fix undefined user answer issue
-[] fix scoring and right/wrong counting system
-
+[x] fix undefined user answer issue
+[x] fix right/wrong answer system
+[] add scoring system
+[] fix multiple score per answer problem
+[] add display score on screen
 # POTENTIAL FUTURE FEATURES
 
-[] check that users answer is not black
+[] check that users answer is not blank
+[] increase "fuzzy" matching to 80% accuracy
+[] add give the correct answer to the question
 [] allow a user to skip a question without hurting his/her score
 [] learn to use adobe XD, figma or similar tool to improve UX/UI
 [] add question categories
