@@ -66,28 +66,17 @@ function playGame(question, answer, money) {
   // console.log(question);
   // console.log(answer);
   // console.log(money);
-  console.log(`this is the tmp question: ${tmpQ}`);
-  console.log(`this is the tmp answer: ${tmpA}`);
-  console.log(`this is the tmp money: ${tmpM}`);
+  // console.log(`this is the tmp question: ${tmpQ}`);
+  // console.log(`this is the tmp answer: ${tmpA}`);
+  // console.log(`this is the tmp money: ${tmpM}`);
 
   //--------------------------------
   // insert question, and value
   //--------------------------------
-  $("#question-insertion").html(`Question: ${question}`);
-  // $("#value-header").html("Value:");
-  let strMoney = `${tmpM}`;
-    //--------------------------------
-  // deal with weird cases of null question values
-  //--------------------------------
-  if (strMoney === null || strMoney === "null" ) {
-    // strMoney = "1000";
-    $("#value-insertion").html(`Question Value: ${1000}`);
-  } else {
-    $("#value-insertion").html(`Question Value: ${strMoney}`);
-  }
-  
+  $("#question-insertion").html(question);
+  $("#value-header").html("Value:");
+  $("#value-insertion").html(String(money));
   $("#Result-header").html("Result:");
-  $("#score-insertion").html(`${userMoney}`);
 
   //--------------------------------
   // switch from on form submit to this in an attempt
@@ -115,9 +104,6 @@ function playGame(question, answer, money) {
     console.log(`this is the user's answer: ${user}`);
     console.log(typeof user);
 
-    let answerDisplay = `Your answer: ${user}`;
-    $("#answer-insertion").html(answerDisplay);
-
     /**
      * clears the answer box for the next question
      */
@@ -126,42 +112,37 @@ function playGame(question, answer, money) {
     }
 
     //--------------------------------
+    // alert user again false answer
+    //--------------------------------
+    if (user = "") {
+      alert("Please enter an answer");
+      user = $("#answer-box").val();
+    }
+
+    //--------------------------------
     // see if the user's answer is absolutely accurate
     //--------------------------------
-    let u1 = `${user}`;
-    let tmpA2 = tmpA.toLowerCase();
-    let testAnswer = u1.toLowerCase();
-    let sm = parseInt(strMoney);
-      // console.log(sm);
-    if (tmpA2 === testAnswer) {
-      console.log("right");
-      // say right
-      $("#result-insertion").html("Your answer is: Right!")
-      // let sm = parseInt(strMoney);
-      console.log(sm);
-      
-      // add to score
-      
-    } else if (tmpA2.search(testAnswer) >= 0) {
-      // had to adjust conditional because of truthiness
-      console.log("right");
-      // say right
-      $("#result-insertion").html("Your answer is: Right!")
-      // add to score
-      // let sm = parseInt(strMoney);
-      console.log(sm);
-    } else { 
-      console.log("wrong");
-      // say wrong
-      $("#result-insertion").html("Your answer is: Wrong!")
-      // subtract from score
-      // let sm = parseInt(strMoney);
-      console.log(sm);
-    }
-    //--------------------------------
-    // clears existing value
-    //--------------------------------
-    clearAnswerBox();
+    // let tmpBool = isAnswerCorrect(tmpA, userAnswer);
+    // console.log(`your answer is correct: ${tmpBool}`);
+
+    // if is right answer add money, else subtract it
+    // if (answer.toLowerCase() == userAnswer.toLowerCase() || answer.toLowerCase().search(userAnswer.toLowerCase())) {
+    //   // if true add money
+    //   // console.log(true);
+    //   let tmpVal = parseInt($("#value-insertion").html());
+    //   console.log(tmpVal);
+    //   $("#Result-insertion").html("Right Answer!");
+    //   userMoney += tmpVal;
+    //   $("#answer-box").html("");
+    // } else {
+    //   // if false subtract money
+    //   console.log(false);
+    //   let tmpVal = parseInt($("#value-insertion").html());
+    //   console.log(tmpVal);
+    //   $("#Result-insertion").html("Sorry, Wrong Answer!");
+    //   userMoney -= tmpVal;
+    //   $("#answer-box").html("");
+    // }
   });
   console.log(userMoney);
   $("#score-insertion").html(String(userMoney));

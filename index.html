@@ -51,30 +51,30 @@
             </div>
         </header>
         <main>
-            <div id="main-container">
-                <div class="row">
-                    <div id="display-container">
-                        <p id="question-insertion"></p>
-                        <p id="value-header"></p>
-                        <p id="value-insertion"></p>
-                        <p id="answer-insertion"></p>
-                        <p id="result-header"></p>
-                        <p id="result-insertion"></p>
+            <div id="main-container-top">
+                <div id="tv-interior">
+                    <div class="row">
+                        <div id="display-container">
+                            <p id="question-insertion"></p>
+                            <p id="value-insertion"></p>
+                            <p id="answer-insertion"></p>
+                            <p id="result-insertion"></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <p id="result"></p>
+            <div id="main-container-bottom">
+                <!-- <p id="result"></p> -->
                 <!-- the answer submission form -->
                 <!-- <form> -->
-                    <input type="text" id="answer-box" name="answer" placeholder="Enter your answer here">
-                    <input type="submit" id="answer-submit" value="Submit">
+                <input type="text" id="answer-box" class="answer" name="answer" placeholder="Enter your answer here">
+                <input type="submit" id="answer-submit" class="answer" value="Submit">
                 <!-- </form> -->
             </div>
             <div id="results-container">
                 <div id="money-score">
-                    <p>Score:</p>
-                    <p id="score-insertion"></p>
+                    <div class="money">Winnings ($):</div>
+                    <div id="score-insertion" class="money"></div>
                 </div>
             </div>
         </main>

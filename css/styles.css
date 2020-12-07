@@ -84,3 +84,42 @@ header {
 	cursor: pointer;
 
 }
+
+#header-container h1 {
+	color: #592A0E;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 2em;
+}
+
+
+#main-container-top {
+	background-image: url("../imgs/myTV.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	/* border: 1px dotted red; */
+	/* min-height: 100px; */
+	height: 400px;
+	max-height: 600px;
+	padding: 0;
+	/* overflow: auto; */
+}
+
+#main-container-bottom {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#money-score {
+	display: flex;
+	justify-content: center;
+}
+
+.answer {
+	margin-top: 10px;
+	padding: 5px;
+}
+
+.money {
+	padding: 10px;
+}

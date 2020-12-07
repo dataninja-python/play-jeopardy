@@ -64,6 +64,8 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 
 # POTENTIAL FUTURE FEATURES
 
+[] check that users answer is not black
+[] allow a user to skip a question without hurting his/her score
 [] learn to use adobe XD, figma or similar tool to improve UX/UI
 [] add question categories
 [] set up to play more like jeopardy with clicking of multiple squares

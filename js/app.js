@@ -59,16 +59,27 @@ function playGame(question, answer, money) {
     // console.log(question);
     // console.log(answer);
     // console.log(money);
-    // console.log(`this is the tmp question: ${tmpQ}`);
-    // console.log(`this is the tmp answer: ${tmpA}`);
-    // console.log(`this is the tmp money: ${tmpM}`);
+    console.log("this is the tmp question: " + tmpQ);
+    console.log("this is the tmp answer: " + tmpA);
+    console.log("this is the tmp money: " + tmpM);
     //--------------------------------
     // insert question, and value
     //--------------------------------
-    $("#question-insertion").html(question);
-    $("#value-header").html("Value:");
-    $("#value-insertion").html(String(money));
+    $("#question-insertion").html("Question: " + question);
+    // $("#value-header").html("Value:");
+    var strMoney = "" + tmpM;
+    //--------------------------------
+    // deal with weird cases of null question values
+    //--------------------------------
+    if (strMoney === null || strMoney === "null") {
+        // strMoney = "1000";
+        $("#value-insertion").html("Question Value: " + 1000);
+    }
+    else {
+        $("#value-insertion").html("Question Value: " + strMoney);
+    }
     $("#Result-header").html("Result:");
+    $("#score-insertion").html("" + userMoney);
     //--------------------------------
     // switch from on form submit to this in an attempt
     // to fix the answer always saying true bug
@@ -86,35 +97,57 @@ function playGame(question, answer, money) {
         // console.log(`this is the user's answer: ${userAnswer}`);
         // console.log(typeof userAnswer);
         //--------------------------------
-        // how attempting with jquery
-        // using vanilla javascript and it works
+        // now attempting with jquery
+        // it finally works
         //--------------------------------
         var user = $("#answer-box").val();
         console.log("this is the user's answer: " + user);
         console.log(typeof user);
+        var answerDisplay = "Your answer: " + user;
+        $("#answer-insertion").html(answerDisplay);
+        /**
+         * clears the answer box for the next question
+         */
+        function clearAnswerBox() {
+            $("#answer-box").val("");
+        }
         //--------------------------------
-        // put answer checking into its own function
+        // see if the user's answer is absolutely accurate
         //--------------------------------
-        // let tmpBool = isAnswerCorrect(tmpA, userAnswer);
-        // console.log(`your answer is correct: ${tmpBool}`);
-        // if is right answer add money, else subtract it
-        // if (answer.toLowerCase() == userAnswer.toLowerCase() || answer.toLowerCase().search(userAnswer.toLowerCase())) {
-        //   // if true add money
-        //   // console.log(true);
-        //   let tmpVal = parseInt($("#value-insertion").html());
-        //   console.log(tmpVal);
-        //   $("#Result-insertion").html("Right Answer!");
-        //   userMoney += tmpVal;
-        //   $("#answer-box").html("");
-        // } else {
-        //   // if false subtract money
-        //   console.log(false);
-        //   let tmpVal = parseInt($("#value-insertion").html());
-        //   console.log(tmpVal);
-        //   $("#Result-insertion").html("Sorry, Wrong Answer!");
-        //   userMoney -= tmpVal;
-        //   $("#answer-box").html("");
-        // }
+        var u1 = "" + user;
+        var tmpA2 = tmpA.toLowerCase();
+        var testAnswer = u1.toLowerCase();
+        var sm = parseInt(strMoney);
+        // console.log(sm);
+        if (tmpA2 === testAnswer) {
+            console.log("right");
+            // say right
+            $("#result-insertion").html("Your answer is: Right!");
+            // let sm = parseInt(strMoney);
+            console.log(sm);
+            // add to score
+        }
+        else if (tmpA2.search(testAnswer) >= 0) {
+            // had to adjust conditional because of truthiness
+            console.log("right");
+            // say right
+            $("#result-insertion").html("Your answer is: Right!");
+            // add to score
+            // let sm = parseInt(strMoney);
+            console.log(sm);
+        }
+        else {
+            console.log("wrong");
+            // say wrong
+            $("#result-insertion").html("Your answer is: Wrong!");
+            // subtract from score
+            // let sm = parseInt(strMoney);
+            console.log(sm);
+        }
+        //--------------------------------
+        // clears existing value
+        //--------------------------------
+        clearAnswerBox();
     });
     console.log(userMoney);
     $("#score-insertion").html(String(userMoney));
