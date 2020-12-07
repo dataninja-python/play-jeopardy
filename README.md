@@ -1,8 +1,9 @@
-#Play-Jeopardy MVP
+# Play-Jeopardy MVP
 
 This is a trivia app that allows a user to answer jeopardy questions provided by the https://jservice.io/ api.
 
-#HOW TO PLAY
+# HOW TO PLAY
+
 * click the "NEXT QUESTION" button to start and advance the game
 * afterwards, you will be provided with a random jeopardy trivia question
 * in the input section where it says "Enter your answer", enter your response as a statement (not a question as Jeopardy actually requires) in lowercase
@@ -13,14 +14,16 @@ This is a trivia app that allows a user to answer jeopardy questions provided by
 * so, after clicking and answering the 20th question, the game will reset when the "NEXT QUESTION" button is clicked again
 * if at any time you forget any of this the "RULES" button in the upper left corner of the app for a quick refresher
 
-#GIST
+# GIST
+
 This is an MVP of a jeopardy app.
 
 This basic iteration was created in ~5 days. It is intended to improve my comprehension of key programming fundamentals and provide practice creating functional prototypes quickly. HTML, CSS, Typescript, Javascript, and Jquery were used in development. VS Code and neovim were used as code editors.
 
 Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my General Assembly Software Engineering Immersive study group for helping me refine the idea, find a good api, overcome obstacles, and keeping me motivated along what turned out to be a more challening journey than originally expected.
 
-#THE PLAN IN PSEUDOCODE
+# THE PLAN IN PSEUDOCODE
+
 1. pull a number of jeopardy category options
 2. narrow selection down to just datasets with 5 questions
 3. remove unclean datasets
@@ -32,7 +35,8 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 9. if the user answers correctly, give the money; else subtract the money
 10. display an updated score after each question and at end
 
-#DEV PLAN
+# DEV PLAN
+
 [x] due to api issues, MVP was simplifid to allow the user to get 1 random question at a time 20 times and tabulate the score
 [x] limit user to answer only 20 questions total
 [x] allow fuzzy answer matching
@@ -43,17 +47,23 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [] display score
 [] display rules in modal || have a sticky nav bar
 
-#REQUIRED FEATURES
+# REQUIRED FEATURES
+
 [x] Use HTML, CSS, JavaScript and JQuery
 [] Host on github pages
-[x] Commit every day
+[x] Commit every day - locally; uploaded periodically
 [x] Write a README.md file with explanation of tech, approach, link, installation instructions, unsolved problems, etc
 [x] Use AJAX to make a request to an external API and insert some of of the data retrived into the DOM
 [] Implement responsive design
 [x] Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
 
-#POTENTIAL FUTURE FEATURES
+# BUGS
+
+[] fix undefined user answer issue
 [] fix scoring and right/wrong counting system
+
+# POTENTIAL FUTURE FEATURES
+
 [] learn to use adobe XD, figma or similar tool to improve UX/UI
 [] add question categories
 [] set up to play more like jeopardy with clicking of multiple squares
@@ -66,7 +76,8 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [] remove but where person can enter multiple answers to the same question
 [] add random responses to right and wrong answers
 
-#ISSUES
+# ISSUES
+
 _Time Management_
 Estimating how long things would take was far more challenging than I anticipated.
 Then, again I have little experience estimating the difficulty of projects like this. Data related issues have taken up 80% of time to date.
@@ -81,10 +92,14 @@ In my quest to have at least a working knowledge of the most popular languages, 
 _Front-end_
 My inadequacies with UX/UI are a major reason for taking this course. I want to push myself to do more than create a functional ugly trivia game. However, it is currently Sunday, 12/6/2020, and the project must be done in 2 days. Thus, I fear I may fail to produce something attractive...again. However, I plan to take at least 1 adobe XD tutorial and use the application to help accelerate my understanding of how to produce better UX/UI.
 
-_Scoring Issue_
-To fix an issue with scoring I was forced to refactor my code and put sections into functions.
+_Scoring Issues_
+To fix an issue with scoring I was forced to refactor my code and put sections into functions. Scoping continued to be a problem which had to be addressed by methodically breaking the code into functions.
 
-**SOURCE LIST**
+_Local Storage_
+Unfortunately, I was unable to use localstorage as planned.
+
+# SOURCE LIST
+
 Below is a best effort to assemble a list of resources used in this project; however, some sources may be listed directly in the code where used and others may be mistakenly omitted. Apologies in advance to source unintentionally not listed.
 
 https://www.codegrepper.com/code-examples/javascript/javascript+read+file+lines+into+array+vanilla
@@ -108,3 +123,9 @@ https://www.w3schools.com/js/js_api_web_storage.asp
 https://www.w3schools.com/jsref/prop_win_localstorage.asp
 https://www.w3schools.com/jsref/prop_win_sessionstorage.asp
 https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/
+
+# COLOR SCHEME
+
+_Partial_
+#592A0E
+#BFB3A4

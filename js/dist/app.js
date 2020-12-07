@@ -13,6 +13,10 @@ var questionKey = "question";
 // const moneyKey = "money";
 // used to determine how many of 20 questions remain
 var click = 20;
+// used to keep track of players earnings
+var userMoney = 0;
+// used to track game state
+var isActive = true;
 var currentQuestion;
 var currentAnswer;
 var currentMoney;
@@ -22,15 +26,125 @@ var currentMoney;
 function decrementClick() {
     click--;
 }
+/**
+ * checks if user's answer is correct
+ * @param correctAnswer
+ * @param userAnswer
+ */
+function isAnswerCorrect(correctAnswer, playerAnswer) {
+    var result = false;
+    //--------------------------------
+    // convert both answers to lower case strings
+    //--------------------------------
+    var tmpA = currentAnswer.toLowerCase();
+    // let tmpU = String(playerAnswer);
+    // let tmpP = tmpU.toLowerCase();
+    // attempt to allow "fuzzy" answer matching
+    if (tmpA === playerAnswer) {
+        result = true;
+    }
+    else if (tmpA.search(playerAnswer)) {
+        result = true;
+    }
+    else {
+        result = false;
+    }
+    return result;
+}
 function playGame(question, answer, money) {
     // play game
-    console.log(question);
-    console.log(answer);
-    console.log(money);
+    var tmpQ = question;
+    var tmpA = answer;
+    var tmpM = money;
+    // console.log(question);
+    // console.log(answer);
+    // console.log(money);
+    // console.log(`this is the tmp question: ${tmpQ}`);
+    // console.log(`this is the tmp answer: ${tmpA}`);
+    // console.log(`this is the tmp money: ${tmpM}`);
+    //--------------------------------
+    // insert question, and value
+    //--------------------------------
+    $("#question-insertion").html(question);
+    $("#value-header").html("Value:");
+    $("#value-insertion").html(String(money));
+    $("#Result-header").html("Result:");
+    //--------------------------------
+    // switch from on form submit to this in an attempt
+    // to fix the answer always saying true bug
+    //--------------------------------
+    $("#answer-submit").on("click", function (event) {
+        //--------------------------------
+        // had to reinsert this line to stop rapid refresh
+        //--------------------------------
+        event.preventDefault();
+        //--------------------------------
+        // attempting to get user answer from the inputbox
+        // using vanilla javascript and it works
+        //--------------------------------
+        // let userAnswer = document.getElementById("answer-box").value;
+        // console.log(`this is the user's answer: ${userAnswer}`);
+        // console.log(typeof userAnswer);
+        //--------------------------------
+        // now attempting with jquery
+        // it finally works
+        //--------------------------------
+        // let user = $("#answer-box").val();
+        // console.log(`this is the user's answer: ${user}`);
+        // console.log(typeof user);
+        /**
+         * clears the answer box for the next question
+         */
+        function clearAnswerBox() {
+            $("#answer-box").val("");
+        }
+        //--------------------------------
+        // force player to answer question
+        //--------------------------------
+        var answering = true;
+        var playersAnswer;
+        while (answering) {
+            playersAnswer = String($("#answer-box").val());
+            if (playersAnswer != "") {
+                answering = false;
+            }
+            else {
+                alert("Please enter an answer");
+            }
+        }
+        console.log(playersAnswer);
+        //--------------------------------
+        // put answer checking into its own function
+        //--------------------------------
+        // let tmpBool = isAnswerCorrect(tmpA, userAnswer);
+        // console.log(`your answer is correct: ${tmpBool}`);
+        // if is right answer add money, else subtract it
+        // if (answer.toLowerCase() == userAnswer.toLowerCase() || answer.toLowerCase().search(userAnswer.toLowerCase())) {
+        //   // if true add money
+        //   // console.log(true);
+        //   let tmpVal = parseInt($("#value-insertion").html());
+        //   console.log(tmpVal);
+        //   $("#Result-insertion").html("Right Answer!");
+        //   userMoney += tmpVal;
+        //   $("#answer-box").html("");
+        // } else {
+        //   // if false subtract money
+        //   console.log(false);
+        //   let tmpVal = parseInt($("#value-insertion").html());
+        //   console.log(tmpVal);
+        //   $("#Result-insertion").html("Sorry, Wrong Answer!");
+        //   userMoney -= tmpVal;
+        //   $("#answer-box").html("");
+        // }
+    });
+    console.log(userMoney);
+    $("#score-insertion").html(String(userMoney));
 }
 /**
  * retrieves question, answer, and monetary question value from api
  */
+// exports.__esModule = true;
+// var $ = require("jquery");
 function getData() {
     var fullURL = apiURL + numOfQuestions;
     // console.log(fullURL);
@@ -57,9 +171,16 @@ function getData() {
     });
 }
 $("#clue").on("click", function (event) {
-    // event.preventDefault();
-    console.log(click);
-    $("#count").html(click + " of 20 clues left");
-    decrementClick();
-    getData();
+    event.preventDefault();
+    // console.log(click);
+    // wrap this entire thing in the if else around play game and reload page when get to zero
+    if (click > 0) {
+        $("#count").html(click + " of 20 clues left");
+        decrementClick();
+        getData();
+    }
+    else {
+        console.log("game over");
+        location.reload();
+    }
 });

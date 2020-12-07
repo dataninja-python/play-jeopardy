@@ -46,8 +46,8 @@ header {
 
 #modal-textbox {
 	background-color: white;
-	height: 250px;
-	width: 425px;
+	height: 300px;
+	width: 500px;
 	border-radius: 2px;
 	margin: 150px auto;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -63,7 +63,7 @@ header {
 
 .modal-buttons, .btns {
 	padding: 10px 14px;
-	background-color: #592A0E;
+	background-color: #677996;
 	border: none;
 	outline: none;
 	border-radius: 3px;
@@ -74,12 +74,12 @@ header {
 }
 
 .modal-buttons:hover, .btns:hover {
-	padding: 10px 14px;
+	padding: 11px 15px;
 	background-color: white;
-	border: 2px solid #592A0E;
+	border: 2px solid #677996;
 	outline: none;
 	border-radius: 3px;
-	color: #592A0E;
+	color: #677996;
 	font-family: "Arial";
 	cursor: pointer;
 

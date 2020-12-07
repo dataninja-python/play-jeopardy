@@ -22,7 +22,8 @@
                                 <a id="close" href="#">Close</a>
                                 <h2>20 Questions Rules</h2>
                                 <p>Goal: get the highest score you can.</p>
-                                <p>Start: click "NEXT QUESTION" button. Play: give an answer not in question form and
+                                <p>Start: click "NEXT QUESTION" button. Play: give an answer (in lowercase and not as a
+                                    question) and
                                     click the button. Score: get the right answer to earn the money displayed; lose the
                                     money for a wrong answer.</p>
                                 <p>Have Fun!</p>
@@ -53,19 +54,28 @@
             <div id="main-container">
                 <div class="row">
                     <div id="display-container">
+                        <p id="question-insertion"></p>
+                        <p id="value-header"></p>
+                        <p id="value-insertion"></p>
+                        <p id="answer-insertion"></p>
+                        <p id="result-header"></p>
+                        <p id="result-insertion"></p>
                     </div>
                 </div>
             </div>
             <div>
                 <p id="result"></p>
                 <!-- the answer submission form -->
-                <form>
+                <!-- <form> -->
                     <input type="text" id="answer-box" name="answer" placeholder="Enter your answer here">
                     <input type="submit" id="answer-submit" value="Submit">
-                </form>
+                <!-- </form> -->
             </div>
             <div id="results-container">
-               <div id="money-score"></div>
+                <div id="money-score">
+                    <p>Score:</p>
+                    <p id="score-insertion"></p>
+                </div>
             </div>
         </main>
         <footer></footer>
