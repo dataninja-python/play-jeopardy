@@ -65,7 +65,7 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [] fix multiple score per answer problem
 [] add display score on screen
 # POTENTIAL FUTURE FEATURES
-
+[] let user know the current question out of 20
 [] check that users answer is not blank
 [] increase "fuzzy" matching to 80% accuracy
 [] add give the correct answer to the question
