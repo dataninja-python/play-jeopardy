@@ -93,46 +93,6 @@ function quit() {
   }, 1000);
 }
 
-$("#answer-submit").on("click", function (event) {
-  let userAnswer = String($("#answer-box").val());
-  let tmp = userAnswer.toLowerCase();
-  const finalUserAnswer = tmp;
-  tmp = currentAnswer.toLowerCase();
-  currentAnswer = tmp;
-  // console.log(`this is the user's answer: ${userAnswer}`);
-  // console.log(`the answer is: ${a}`);
-  let playerIsRight = false;
-  if (currentAnswer === finalUserAnswer) {
-    playerIsRight = true;
-    $("#result-insertion").html("Your answer is: Right!");
-    clearAnswerBox();
-  } else if (currentAnswer.search(finalUserAnswer) !== -1) {
-    playerIsRight = true;
-    $("#result-insertion").html("Your answer is: Right!");
-  } else {
-    playerIsRight = false;
-    $("#result-insertion").html("Your answer is: Wrong!");
-    $("#answer-insertion").html(`The official answer is: ${currentAnswer}`);
-    // clearScreen();
-    clearAnswerBox();
-  }
-
-  console.log(playerIsRight);
-  //-----------------------------------------
-  // deal with the money
-  //-----------------------------------------
-  if (playerIsRight) {
-    console.log(gameObj.cumUserMoney);
-    gameObj.cumUserMoney = gameObj.cumUserMoney + currentMoney;
-  } else { 
-    console.log(gameObj.cumUserMoney);
-    gameObj.cumUserMoney = gameObj.cumUserMoney - currentMoney;
-  }
-  userMoney = gameObj.cumUserMoney;
-  $("#score-insertion").html(String(gameObj.cumUserMoney));
-  // $("#score-insertion").html(String(userMoney));
-  // clearScreen();
-});
 
 /**
  * display on the screen
@@ -146,6 +106,44 @@ function displayToUser(q: string, a: string, v: number) {
   $("#value-insertion").html(String(v));
 
   // get user answer
+  $("#answer-submit").on("click", function (event) {
+    let userAnswer = String($("#answer-box").val());
+    let tmp = userAnswer.toLowerCase();
+    const finalUserAnswer = tmp;
+    tmp = a.toLowerCase();
+    a = tmp;
+    // console.log(`this is the user's answer: ${userAnswer}`);
+    // console.log(`the answer is: ${a}`);
+    let playerIsRight = false;
+    if (a === finalUserAnswer) {
+      playerIsRight = true;
+      $("#result-insertion").html("Your answer is: Right!");
+      clearAnswerBox();
+    } else if (a.search(finalUserAnswer) !== -1) {
+      playerIsRight = true;
+      $("#result-insertion").html("Your answer is: Right!");
+    } else {
+      playerIsRight = false;
+      $("#result-insertion").html("Your answer is: Wrong!");
+      $("#answer-insertion").html(`The official answer is: ${a}`);
+      clearAnswerBox();
+    }
+    console.log(playerIsRight);
+    //-----------------------------------------
+    // deal with the money
+    //-----------------------------------------
+    if (playerIsRight) {
+      console.log(gameObj.cumUserMoney);
+      gameObj.cumUserMoney = gameObj.cumUserMoney + v;
+    } else { 
+      console.log(gameObj.cumUserMoney);
+      gameObj.cumUserMoney = gameObj.cumUserMoney - v;
+    }
+    userMoney = gameObj.cumUserMoney;
+    $("#score-insertion").html(String(gameObj.cumUserMoney));
+    // $("#score-insertion").html(String(userMoney));
+    // clearScreen();
+  });
 }
 
 /**
@@ -171,8 +169,6 @@ function trivia(gameState) {
   // console.log(aArr[19]);
   // console.log(vArr[19]);
   $("#clue").on("click", function () {
-    clearScreen();
-    clearAnswerBox();
     if (qArr.length === 0) {
       console.log("quit");
       quit();

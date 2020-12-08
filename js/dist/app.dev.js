@@ -87,12 +87,54 @@ function quit() {
   click = 0; // inform user quitting game
 
   clearAll();
-  $("#setup-insertion").html("Thank for playing. Quitting game in 3 seconds"); // reload
+  $("#setup-insertion").html("Thank for playing. Quitting game"); // reload
 
   setTimeout(function () {
     location.reload();
-  }, 3000);
+  }, 1000);
 }
+
+$("#answer-submit").on("click", function (event) {
+  var userAnswer = String($("#answer-box").val());
+  var tmp = userAnswer.toLowerCase();
+  var finalUserAnswer = tmp;
+  tmp = currentAnswer.toLowerCase();
+  currentAnswer = tmp; // console.log(`this is the user's answer: ${userAnswer}`);
+  // console.log(`the answer is: ${a}`);
+
+  var playerIsRight = false;
+
+  if (currentAnswer === finalUserAnswer) {
+    playerIsRight = true;
+    $("#result-insertion").html("Your answer is: Right!");
+    clearAnswerBox();
+  } else if (currentAnswer.search(finalUserAnswer) !== -1) {
+    playerIsRight = true;
+    $("#result-insertion").html("Your answer is: Right!");
+  } else {
+    playerIsRight = false;
+    $("#result-insertion").html("Your answer is: Wrong!");
+    $("#answer-insertion").html("The official answer is: " + currentAnswer); // clearScreen();
+
+    clearAnswerBox();
+  }
+
+  console.log(playerIsRight); //-----------------------------------------
+  // deal with the money
+  //-----------------------------------------
+
+  if (playerIsRight) {
+    console.log(gameObj.cumUserMoney);
+    gameObj.cumUserMoney = gameObj.cumUserMoney + currentMoney;
+  } else {
+    console.log(gameObj.cumUserMoney);
+    gameObj.cumUserMoney = gameObj.cumUserMoney - currentMoney;
+  }
+
+  userMoney = gameObj.cumUserMoney;
+  $("#score-insertion").html(String(gameObj.cumUserMoney)); // $("#score-insertion").html(String(userMoney));
+  // clearScreen();
+});
 /**
  * display on the screen
  * @param q
@@ -100,29 +142,10 @@ function quit() {
  * @param v
  */
 
-
 function displayToUser(q, a, v) {
   // console.log();
   $("#question-insertion").html(q);
   $("#value-insertion").html(String(v)); // get user answer
-
-  $("#answer-submit").on("click", function (event) {
-    var userAnswer = String($("#answer-box").val());
-    var tmp = userAnswer.toLowerCase();
-    userAnswer = tmp;
-    tmp = a.toLowerCase();
-    a = tmp; // console.log(`this is the user's answer: ${userAnswer}`);
-
-    var playerIsRight = false;
-
-    if (a === userAnswer) {
-      playerIsRight = true;
-    } else if (a.search(userAnswer)) {
-      playerIsRight = true;
-    }
-
-    console.log(playerIsRight);
-  });
 }
 /**
  * takes the global gameObj with the data and allows people to get questions
@@ -150,6 +173,9 @@ function trivia(gameState) {
 
 
   $("#clue").on("click", function () {
+    clearScreen();
+    clearAnswerBox();
+
     if (qArr.length === 0) {
       console.log("quit");
       quit();
@@ -157,11 +183,11 @@ function trivia(gameState) {
 
     currentQuestion = qArr.shift();
     currentAnswer = aArr.shift();
-    currentMoney = vArr.shift();
-    console.log(currentQuestion);
-    console.log(currentAnswer);
-    console.log(currentMoney);
-    console.log(aArr.length);
+    currentMoney = vArr.shift(); // console.log(currentQuestion);
+    // console.log(currentAnswer);
+    // console.log(currentMoney);
+    // console.log(aArr.length);
+
     displayToUser(currentQuestion, currentAnswer, currentMoney);
   });
 }
@@ -216,19 +242,19 @@ function getData() {
 
 function setUp() {
   // confirm function call worked
-  console.log("hi! from setup"); //-----------------------------------------
+  // console.log("hi! from setup");
+  //-----------------------------------------
   // set all variables back to default
   //-----------------------------------------
-
   isActive = true; //-----------------------------------------
   // tell user you're getting 20 questions
   //-----------------------------------------
 
   clearAll();
-  $("#setup-insertion").html("Getting your 20 questions...");
+  $("#setup-insertion").html("Getting your 20 questions...give me a sec");
   setTimeout(function () {
     clearAll();
-  }, 2000); // grab 20 questions
+  }, 1000); // grab 20 questions
 
   getData(); // insert them into the global object
   // let click = 20;
