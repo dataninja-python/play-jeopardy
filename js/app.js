@@ -24,12 +24,13 @@ var pregame = "<br><br>Hit the \"RULES\" button to learn how to play. <br><br>Or
  */
 function quit() {
     isActive = false;
+    // $("#question-insertion").html("");
 }
 /**
  * timer delay
  */
 function delay() {
-    setTimeout(function () { console.log("loading!"); }, 500);
+    console.log("working!!!");
 }
 /**
  * play jeopardy
@@ -37,7 +38,7 @@ function delay() {
 function playJeopardy() {
     while (isActive) {
         $("#question-insertion").html("Loading questions...");
-        delay();
+        $("#question-insertion").html("Ready. Hit the 'QUESTION' button.");
         quit();
     }
 }
@@ -59,5 +60,8 @@ $(function () {
     //-----------------------------------------
     setUp();
     var $playGame = $("#play");
-    $playGame.on("click", playJeopardy);
+    $playGame.on("click", function (event) {
+        event.preventDefault();
+        playJeopardy();
+    });
 });

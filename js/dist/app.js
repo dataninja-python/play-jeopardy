@@ -24,12 +24,13 @@ var pregame = "<br><br>Hit the \"RULES\" button to learn how to play. <br><br>Or
  */
 function quit() {
     isActive = false;
+    // $("#question-insertion").html("");
 }
 /**
  * timer delay
  */
 function delay() {
-    setTimeout(function () { console.log("loading!"); }, 500);
+    console.log("working!!!");
 }
 /**
  * play jeopardy
@@ -37,9 +38,22 @@ function delay() {
 function playJeopardy() {
     while (isActive) {
         $("#question-insertion").html("Loading questions...");
-        delay();
-        $("#question-insertion").html("Loading questions...");
-        quit();
+        $("#question-insertion").html("Ready. Hit the 'QUESTION' button.");
+        //-----------------------------------------
+        // check if game is over because user hit quit button
+        //-----------------------------------------
+        $("#quit").on("click", quit);
+        //-----------------------------------------
+        // get a trivia question
+        //-----------------------------------------
+        //-----------------------------------------
+        // check if game is over because out of questions
+        //-----------------------------------------
+        if (click < 0) {
+            quit();
+        }
+        console.log(click);
+        click--;
     }
 }
 /**
@@ -50,8 +64,8 @@ function setUp() {
     // set all variables back to default
     //-----------------------------------------
     isActive = true;
-    var click = 20;
-    var userMoney = 0;
+    // let click = 20;
+    // let userMoney = 0;
     $("#question-insertion").html(pregame);
 }
 $(function () {
@@ -60,5 +74,8 @@ $(function () {
     //-----------------------------------------
     setUp();
     var $playGame = $("#play");
-    $playGame.on("click", playJeopardy);
+    $playGame.on("click", function (event) {
+        event.preventDefault();
+        playJeopardy();
+    });
 });
