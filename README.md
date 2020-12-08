@@ -44,27 +44,28 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [x] display the question
 [x] display "right" or "wrong"
 [x] display answer
-[] display score
-[] display rules in modal || have a sticky nav bar
+[x] display score
+[x] display rules in modal || have a sticky nav bar
 
 # REQUIRED FEATURES
 
 [x] Use HTML, CSS, JavaScript and JQuery
-[] Host on github pages
+[x] Host on github pages
 [x] Commit every day - locally; uploaded periodically
 [x] Write a README.md file with explanation of tech, approach, link, installation instructions, unsolved problems, etc
 [x] Use AJAX to make a request to an external API and insert some of of the data retrived into the DOM
-[] Implement responsive design
+[x] Implement responsive design
 [x] Have one or more complex user interface modules such as a carousel, a modal, a stick nav, tootips, etc
 
 # BUGS
 
 [x] fix undefined user answer issue
 [x] fix right/wrong answer system
-[] add scoring system
+[x] add scoring system
 [] fix multiple score per answer problem
-[] add display score on screen
+[x] add display score on screen
 # POTENTIAL FUTURE FEATURES
+[] make design more responsive by inserting image directly into html
 [] let user know the current question out of 20
 [] check that users answer is not blank
 [] increase "fuzzy" matching to 80% accuracy
@@ -129,6 +130,9 @@ https://www.w3schools.com/js/js_api_web_storage.asp
 https://www.w3schools.com/jsref/prop_win_localstorage.asp
 https://www.w3schools.com/jsref/prop_win_sessionstorage.asp
 https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/
+https://devdojo.com/wael-manai/get-a-preloader-on-your-site-with-jquery
+https://ihatetomatoes.net/create-custom-preloading-screen/
+https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/
 
 # COLOR SCHEME
 

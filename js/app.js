@@ -255,6 +255,7 @@ function playJeopardy() {
     // allow player to quit at any time by hitting the quit button = reload page
 }
 $(function () {
+    $('.preload').fadeOut('slow');
     //-----------------------------------------
     // insert mini-instructions
     //-----------------------------------------

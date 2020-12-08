@@ -2,7 +2,11 @@
 
 /* NOTE: sticky navbar was more tricky than I thought. I referred to w3  */
 /* for help: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
+body{
+	font-family: 'Nanum Myeongjo', serif;
+}
 
 
 #navbar {
@@ -85,6 +89,7 @@ header {
 
 }
 
+
 #header-container h1 {
 	color: #592A0E;
 	margin: 0 auto;
@@ -138,6 +143,16 @@ header {
 	border-radius: 3px;
 }
 
+#answer-submit:hover {
+	background-color: #BFB3A4;
+	color: black;
+	font-weight: bold;
+	pointer-events: auto;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+
 #display-container{
 	/* border: 1px dashed black; */
 	width: 500px;
@@ -153,8 +168,8 @@ header {
 }
 
 #question-header {
-	margin-top: 55px;
-	margin-left: 50px;
+	margin-top: 60px;
+	margin-left: 35px;
 	margin-right: 100px;
 	overflow: auto;
 	font-size: 0.9em;
@@ -163,7 +178,7 @@ header {
 
 #value-header, #result-header {
 	margin-top: 10px;
-	margin-left: 50px;
+	margin-left: 35px;
 	margin-right: 100px;
 	overflow: auto;
 	font-size: 0.9em;
@@ -173,7 +188,7 @@ header {
 
 #question-insertion {
 	margin-top: 5px;
-	margin-left: 50px;
+	margin-left: 35px;
 	margin-right: 100px;
 	overflow: auto;
 	font-size: 0.9em;
@@ -188,20 +203,102 @@ header {
 
 #value-insertion {
 	margin-top: 5px;
-	margin-left: 50px;
+	margin-left: 35px;
 	font-size: 1em;
 }
 
 #answer-insertion, #result-insertion {
 	margin-top: 5px;
-	margin-left: 50px;
+	margin-left: 35px;
 	overflow: auto;
 	font-size: 1em;
 }
 
 #setup-insertion {
 	margin-top: 10px;
-	margin-left: 50px;
+	margin-left: 35px;
 	margin-right: 100px;
 	overflow: auto;
+}
+
+@media only screen and (min-width: 768px) {
+	/* for desktop design */
+	#main-container-top {
+		background-image: url("../imgs/myTV.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		/* border: 1px dotted red; */
+		/* min-height: 100px; */
+		height: 400px;
+		max-height: 600px;
+		padding: 0;
+		/* overflow: auto; */
+	}
+	
+	#display-container{
+		/* border: 1px dashed black; */
+		width: 500px;
+		height: 350px;
+		/* padding-left: 100px; */
+		/* padding-bottom: 50px; */
+		/* padding-right: -50px; */
+		z-index: 1;
+		align-items: center;
+		margin: auto;
+		overflow: auto;
+		/* background-color: #BFB3A4; */
+	}
+	#question-header {
+		margin-top: 60px;
+		margin-left: 50px;
+		margin-right: 100px;
+		overflow: auto;
+		font-size: 0.9em;
+		font-weight: bold;
+	}
+	
+	#value-header, #result-header {
+		margin-top: 10px;
+		margin-left: 50px;
+		margin-right: 100px;
+		overflow: auto;
+		font-size: 0.9em;
+		font-weight: bold;
+	}
+	
+	
+	#question-insertion {
+		margin-top: 5px;
+		margin-left: 50px;
+		margin-right: 100px;
+		overflow: auto;
+		font-size: 0.9em;
+	}
+	
+	/* #result-header {
+		margin-top: 15px;
+		margin-left: 50px;
+		margin-right: 100px;
+		overflow: auto;
+	} */
+	
+	#value-insertion {
+		margin-top: 5px;
+		margin-left: 50px;
+		font-size: 1em;
+	}
+	
+	#answer-insertion, #result-insertion {
+		margin-top: 5px;
+		margin-left: 50px;
+		overflow: auto;
+		font-size: 1em;
+	}
+	
+	#setup-insertion {
+		margin-top: 10px;
+		margin-left: 50px;
+		margin-right: 100px;
+		overflow: auto;
+	}
 }

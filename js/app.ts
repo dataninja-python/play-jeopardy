@@ -281,6 +281,8 @@ function playJeopardy() {
 }
 
 $(() => {
+
+  $('.preload').fadeOut('slow');
   //-----------------------------------------
   // insert mini-instructions
   //-----------------------------------------
