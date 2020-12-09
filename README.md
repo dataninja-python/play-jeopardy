@@ -2,6 +2,13 @@
 
 This is a trivia app that allows a user to answer jeopardy questions provided by the https://jservice.io/ api.
 
+## Repo
+https://github.com/dataninja-python/play-jeopardy
+
+## Link
+https://dataninja-python.github.io/play-jeopardy/
+
+
 # HOW TO PLAY
 
 * click the "NEXT QUESTION" button to start and advance the game
