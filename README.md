@@ -72,7 +72,8 @@ Special thanks to Leland Shirley, Jerrica Bobadilla, Matt Hunington, and my Gene
 [] fix multiple score per answer problem
 [x] add display score on screen
 # POTENTIAL FUTURE FEATURES
-[] make design more responsive by inserting image directly into html
+[] replace null question values with a random value
+[] make design more responsive by inserting image directly into html or resizing background image as %
 [] let user know the current question out of 20
 [] check that users answer is not blank
 [] increase "fuzzy" matching to 80% accuracy
@@ -140,6 +141,7 @@ https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascrip
 https://devdojo.com/wael-manai/get-a-preloader-on-your-site-with-jquery
 https://ihatetomatoes.net/create-custom-preloading-screen/
 https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images
 
 # COLOR SCHEME
 

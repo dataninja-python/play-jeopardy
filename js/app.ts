@@ -206,8 +206,8 @@ function getData() {
      */
     function (clues) {
       // initial data test
-      // console.log(clues[0].question);
-      // console.log(clues[0].answer);
+      console.log(clues[0].question);
+      console.log(clues[0].answer);
       // console.log(clues[0].value);
       // console.log(typeof clues[0].value);
 
